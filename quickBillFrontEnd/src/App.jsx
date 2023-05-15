@@ -1,20 +1,22 @@
-import Asside from './pages/Asside'
-import Content from './pages/Content'
-import Footer from './pages/Footer'
-import Nabvar from './pages/Nabvar'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+//components
+import Asside from "./components/Asside";
+import Content from "./components/Content";
+import Footer from './components/Footer'
+import Nabvar from "./components/Nabvar";
 
 function App() {
-
-
   return (
-    <>
-      <Nabvar />
-      <Asside />
-      <Content />
-      <Footer />
-    </>
-  )
+    <BrowserRouter>
+        <Nabvar />
+      <Routes>
+        <Asside />
+        <Content />
+        <Footer />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
