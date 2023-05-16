@@ -1,21 +1,22 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { Route, Routes } from "react-router-dom";
 //components
 import Asside from "./components/Asside";
-import Content from "./components/Content";
-import Footer from './components/Footer'
 import Nabvar from "./components/Nabvar";
+
+//pages
+import Ecommerce from "./pages/Ecommerce";
+import Products from './pages/Products'
 
 function App() {
   return (
-    <BrowserRouter>
-        <Nabvar />
+    <>
+      <Nabvar />
+      <Asside />
       <Routes>
-        <Asside />
-        <Content />
-        <Footer />
+        <Route path="/ecommerce" element={<Ecommerce />} />
+        <Route path="/products" element={<Products />} />
       </Routes>
-    </BrowserRouter>
+    </>
   );
 }
 
