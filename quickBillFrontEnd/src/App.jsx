@@ -12,7 +12,7 @@ function App() {
     <>
       <Nabvar />
       <Asside />
-      <Routes>
+      <Routes >
         <Route path="/ecommerce" element={<Ecommerce />} />
         <Route path="/products" element={<Products />} />
       </Routes>

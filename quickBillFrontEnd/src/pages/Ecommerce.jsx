@@ -8,10 +8,10 @@ function Ecommerce() {
               <div className="col-12 col-sm-6">
                 <h3 className="d-inline-block d-sm-none">LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
                 <div className="col-12">
-                  <img src="../../dist/img/prod-1.jpg" className="product-image" alt="Product Image" />
+                  <img src="https://casanorma.com.ar/wp-content/uploads/2023/05/btSpider.png" className="product-image" alt="Product Image" />
                 </div>
                 <div className="col-12 product-image-thumbs">
-                  <div className="product-image-thumb active"><img src="../../dist/img/prod-1.jpg" alt="Product Image" /></div>
+                  <div className="product-image-thumb active"><img src="https://casanorma.com.ar/wp-content/uploads/2023/05/btSpider.png" alt="Product Image" /></div>
                   <div className="product-image-thumb"><img src="../../dist/img/prod-2.jpg" alt="Product Image" /></div>
                   <div className="product-image-thumb"><img src="../../dist/img/prod-3.jpg" alt="Product Image" /></div>
                   <div className="product-image-thumb"><img src="../../dist/img/prod-4.jpg" alt="Product Image" /></div>
