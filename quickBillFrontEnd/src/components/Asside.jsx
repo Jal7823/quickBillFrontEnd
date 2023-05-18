@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { NavLink } from 'react-router-dom';
 
 function Asside() {
@@ -74,6 +74,7 @@ function Asside() {
                 <i className="nav-icon fas fa-box" />
                 <p>
                   Productos
+                  <span className="right badge badge-danger">Nro</span>
                 </p>
               </NavLink>
             </li>

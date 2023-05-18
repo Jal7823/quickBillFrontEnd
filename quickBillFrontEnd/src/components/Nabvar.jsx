@@ -18,13 +18,13 @@ function Nabvar() {
             </NavLink>
           </li>
           <li className="nav-item d-none d-sm-inline-block">
-            <NavLink  to="/ecommerce" className="nav-link">
-              Test
+            <NavLink  to="/" className="nav-link">
+              <i className='fa fa-home'></i> Inicio
             </NavLink>
           </li>
           <li className="nav-item d-none d-sm-inline-block">
             <NavLink  to="#" className="nav-link">
-              Contacto
+            <i className='fa fa-globe'></i> Pagina web 
             </NavLink>
           </li>
         </ul>
@@ -63,7 +63,7 @@ function Nabvar() {
               </form>
             </div>
           </li>
-          <li className="nav-item dropdown">
+          {/* <li className="nav-item dropdown">
             <NavLink  className="nav-link" data-toggle="dropdown" to="#">
               <i className="far fa-comments" />
               <span className="badge badge-danger navbar-badge">3</span>
@@ -179,18 +179,8 @@ function Nabvar() {
             >
               <i className="fas fa-expand-arrows-alt" />
             </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink 
-              className="nav-link"
-              data-widget="control-sidebar"
-              data-controlsidebar-slide="true"
-              to="#"
-              role="button"
-            >
-              <i className="fas fa-th-large" />
-            </NavLink>
-          </li>
+          </li> */}
+          
         </ul>
       </nav>
     </div>
