@@ -78,7 +78,7 @@ function Asside() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/empresa" className="nav-link">
+              <NavLink to="/company" className="nav-link">
                 <i className="nav-icon fas fa-building" />
                 <p>
                   Datos de la empresa
