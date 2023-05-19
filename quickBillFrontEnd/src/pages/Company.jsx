@@ -1,4 +1,9 @@
+
 import { useState, useEffect } from "react";
+
+
+
+
 
 function Company() {
   const [company, setCompany] = useState([]);
@@ -26,11 +31,11 @@ function Company() {
         </div>
       ) : (
         company.map((item) => (
-          <div className="card mb-3 " key={item.id}>
+          <div className="card mb-3 w-25 mx-auto" key={item.id}>
             <img
-              style={{ width: "300px", height: "300px" }}
+              style={{ width: "300px", height: "auto" }}
               src={item.image}
-              className="card-img-top mx-auto"
+              className="card-img-top mx-auto img-fluid"
               alt="..."
             />
             <div className="card-body">
@@ -113,7 +118,7 @@ function Company() {
                   value={item.phone}
                 />
               </div>
-              <button className="btn btn-primary w-100">Guardar</button>
+              <button className="btn btn-primary">Guardar</button>
             </div>
           </div>
         ))
