@@ -2,71 +2,72 @@ import MUIDataTable from "mui-datatables";
 import { useEffect, useState } from "react";
 
 
-const columns = [
-  {
-    name: "code",
-    label: "Nombre",
-    options: {
-      filter: true,
-      sort: true,
-    },
-  },
-  {
-    name: "description",
-    label: "Descripcion",
-    options: {
-      filter: true,
-      sort: true,
-    },
-  },
-  {
-    name: "privider",
-    label: "Proveedor",
-    options: {
-      filter: true,
-      sort: true,
-    },
-  },
-  {
-    name: "brand",
-    label: "Marca",
-    options: {
-      filter: true,
-      sort: true,
-    },
-  },
-  {
-    name: "category",
-    label: "Categoria",
-    options: {
-      filter: true,
-      sort: true,
-    },
-  },
-  {
-    name: "price",
-    label: "Precio",
-    options: {
-      filter: true,
-      sort: true,
-    },
-  },
-  {
-    name: "stock",
-    label: "Stock",
-    options: {
-      filter: true,
-      sort: true,
-    },
-  },
-];
-
-const options = {
-  filterType: "checkbox",
-};
 
 function Products() {
+  const columns = [
+    {
+      name: "code",
+      label: "Nombre",
+      options: {
+        filter: true,
+        sort: true,
+      },
+    },
+    {
+      name: "description",
+      label: "Descripcion",
+      options: {
+        filter: true,
+        sort: true,
+      },
+    },
+    {
+      name: "privider",
+      label: "Proveedor",
+      options: {
+        filter: true,
+        sort: true,
+      },
+    },
+    {
+      name: "brand",
+      label: "Marca",
+      options: {
+        filter: true,
+        sort: true,
+      },
+    },
+    {
+      name: "category",
+      label: "Categoria",
+      options: {
+        filter: true,
+        sort: true,
+      },
+    },
+    {
+      name: "price",
+      label: "Precio",
+      options: {
+        filter: true,
+        sort: true,
+      },
+    },
+    {
+      name: "stock",
+      label: "Stock",
+      options: {
+        filter: true,
+        sort: true,
+      },
+    },
+  ];
+  
+  const options = {
+    filterType: "checkbox",
+  };
   const [products, setProducts] = useState([]);
+  console.log(products);
 
   useEffect(() => {
     const reqData = async () => {
@@ -85,12 +86,23 @@ function Products() {
 
     reqData();
   }, []);
+  console.log(products);
 
   return (
     <div className="content-wrapper p-3">
       <MUIDataTable
         title={"Employee List"}
-        data={products}
+        data={products.map((product) => ({
+          id: product.id,
+          code: product.code,
+          name: product.name,
+          description: product.description,
+          provider: product.provider,
+          brand: product.brand,
+          category: product.category,
+          price: product.price,
+          stock: product.stock,
+        }))}
         columns={columns}
         options={options}
       />
