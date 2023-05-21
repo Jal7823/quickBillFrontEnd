@@ -7,7 +7,7 @@ import Nabvar from "./components/Nabvar";
 import Ecommerce from "./pages/Ecommerce";
 import Products from './pages/Products'
 import Company from './pages/Company'
-import Clientes from "./pages/Clientes";
+import Clients from "./pages/Clients";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       <Asside />
       <Routes >
         <Route path="/ecommerce" element={<Ecommerce />} />
-        <Route path="/clientes" element={<Clientes />} />
+        <Route path="/clients" element={<Clients />} />
         <Route path="/products" element={<Products />} />
         <Route path="/company" element={<Company />} />
       </Routes>

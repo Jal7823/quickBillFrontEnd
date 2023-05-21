@@ -54,7 +54,7 @@ function Asside() {
               </ul>
             </li>
             <li className="nav-item">
-              <NavLink to="/clientes" className="nav-link">
+              <NavLink to="/clients" className="nav-link">
                 <i className="nav-icon fas fa-users" />
                 <p>
                   Clientes
