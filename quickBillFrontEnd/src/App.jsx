@@ -16,8 +16,8 @@ function App() {
       <Asside />
       <Routes >
         <Route path="/ecommerce" element={<Ecommerce />} />
-        <Route path="/clients" element={<Clients />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/clients" element={<Clients />} />
         <Route path="/company" element={<Company />} />
       </Routes>
     </>

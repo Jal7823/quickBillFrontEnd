@@ -45,7 +45,7 @@ const Clients = () => {
         customBodyRender: (value, tableMeta) => {
           const is_staff = value; // Obtener el valor de is_boss desde los parámetros de renderizado
           return (
-            is_staff ? <CheckIcon className="mx-auto" /> : <CloseIcon />
+            is_staff ?  <div className="text-center"><CheckIcon  className="mx-auto" /></div> : <div className="text-center"><CloseIcon /></div>
           );
         }
       },
@@ -59,7 +59,7 @@ const Clients = () => {
         customBodyRender: (value, tableMeta) => {
           const is_employe = value; // Obtener el valor de is_boss desde los parámetros de renderizado
           return (
-            is_employe ? <CheckIcon className="mx-auto" /> : <CloseIcon />
+            is_employe ? <div className="text-center"><CheckIcon  className="mx-auto" /></div> : <div className="text-center"><CloseIcon /></div>
           );
         }
       },
@@ -74,34 +74,9 @@ const Clients = () => {
         customBodyRender: (value, tableMeta) => {
           const is_boss = value; // Obtener el valor de is_boss desde los parámetros de renderizado
           return (
-            is_boss ? <CheckIcon className="mx-auto" /> : <CloseIcon />
+            is_boss ?  <div className="text-center"><CheckIcon  className="mx-auto" /></div> : <div className="text-center"><CloseIcon /></div>
           );
         }
-      },
-    },
-    
-    {
-      name:'address',
-      label:'Direccion',
-      options:{
-        filter:true,
-        sort:true
-      },
-    },
-    {
-      name:'location',
-      label:'Localidad',
-      options:{
-        filter:true,
-        sort:true
-      },
-    },
-    {
-      name:'province',
-      label:'Provincia',
-      options:{
-        filter:true,
-        sort:true
       },
     },
     {
@@ -114,7 +89,7 @@ const Clients = () => {
     },
     {
       name: "actions",
-      label: "Acciones",
+      label: "ACCIONES",
       options: {
         filter: false,
         sort: false,
@@ -178,7 +153,7 @@ const Clients = () => {
       {Users.length === 0 ? (
         <p>No hay nada para mostrar</p>
       ) : (
-        <div className="content-wrapper p-3">
+        <div className="">
           <MUIDataTable
             title={"Users List"}
             data={Users}
