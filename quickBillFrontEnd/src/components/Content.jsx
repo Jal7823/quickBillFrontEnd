@@ -1,7 +1,7 @@
 import Ecommerce from '../pages/Ecommerce'
 
 
-function Content({component}) {
+function Content() {
   return (
     <>
       {/* <!-- Content Wrapper. Contains page content --> */}
@@ -17,7 +17,7 @@ function Content({component}) {
 
                   {/* put your content here */}
                   
-                      {<component/>}
+                     
 
                   {/* put your content here */}
                 </section>

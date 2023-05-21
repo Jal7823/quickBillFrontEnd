@@ -1,10 +1,6 @@
 
 import { useState, useEffect } from "react";
 
-
-
-
-
 function Company() {
   const [company, setCompany] = useState([]);
 
