@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-import { useEffect, useState } from "react";
-
-const Products = () => {
-  const [productsAPI, setProductsAPI] = useState([]);
-
-  const reqData = async () => {
-    try {
-      const dataProducts = await fetch("http://127.0.0.1:8000/products/");
-      const tojson = await dataProducts.json();
-      setProductsAPI(tojson);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  console.log(productsAPI);
-=======
 import MUIDataTable from "mui-datatables";
 //icons
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -28,7 +10,6 @@ import { useEffect, useState } from "react";
 
 function Products() {
   const [products, setProducts] = useState([]);
->>>>>>> dd69db25
 
   const columns = [
     {
