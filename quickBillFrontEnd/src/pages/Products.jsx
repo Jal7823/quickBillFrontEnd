@@ -1,23 +1,6 @@
-import MUIDataTable from "mui-datatables";
 import { useEffect, useState } from "react";
 
 const Products = () => {
-  const columns = [
-    "code",
-    "name",
-    "description",
-    "provider",
-    "brand",
-    "category",
-    "price",
-    "wPrice",
-    "stock",
-  ];
-
-  const options = {
-    filterType: "checkbox",
-  };
-
   const [productsAPI, setProductsAPI] = useState([]);
 
   const reqData = async () => {
@@ -30,18 +13,32 @@ const Products = () => {
     }
   };
 
+  console.log(productsAPI);
+
   useEffect(() => {
     reqData();
   }, []);
 
   return (
-    <div className="content-wrapper">
-      <MUIDataTable
-        title={"Lista de productos"}
-        data={Array.from(productsAPI)}
-        columns={columns}
-        options={options}
-      />
+    <div className="content-wrapper p-4">
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th>code</th>
+            <th>name</th>
+            <th>description</th>
+            <th>provider</th>
+            <th>brand</th>
+            <th>category</th>
+            <th>price</th>
+            <th>wPrice</th>
+            <th>stock</th>
+          </tr>
+        </thead>
+        <tbody>
+          {productsAPI}
+        </tbody>
+      </table>
     </div>
   );
 };
