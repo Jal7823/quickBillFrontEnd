@@ -12,14 +12,7 @@ function Products() {
   const [products, setProducts] = useState([]);
 
   const columns = [
-    {
-      name: "id",
-      label: "id",
-      options: {
-        filter: true,
-        sort: true,
-      },
-    },
+    
     {
       name: "code",
       label: "code",
