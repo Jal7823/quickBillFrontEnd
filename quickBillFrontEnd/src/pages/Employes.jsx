@@ -9,7 +9,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
 
-const Clients = () => {
+const Employes = () => {
   const [Users, setUsers] = useState([]);
   const columns = [
     {
@@ -89,8 +89,8 @@ const Clients = () => {
   const options = {
     filterType: "checkbox",
   };
-  const filteredUsers = Users.filter(user => !user.is_staff && !user.is_employe && !user.boss );
-
+  const filteredUsers = Users.filter(user => !user.is_staff  && !user.is_boss  );
+  console.log(filteredUsers);
 
   useEffect(() => {
     const reqData = async () => {
@@ -128,4 +128,4 @@ const Clients = () => {
   );
 };
 
-export default Clients;
+export default Employes;

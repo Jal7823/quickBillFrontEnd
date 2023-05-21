@@ -5,6 +5,7 @@ import {useEffect,useState} from 'react'
 function Asside() {
 
   const [Users, setUsers] = useState('')
+  const [Employe, setEmploye] = useState('')
   const [Products, setProducts] = useState('')
   const [company, setCompany] = useState([]);
 
@@ -17,8 +18,25 @@ function Asside() {
   const usersCount = async () =>{
     const totalUsers = await fetch('http://localhost:8000/users')
     const json = await totalUsers.json()
-    let totalCount = json.length;
-    setUsers(totalCount)
+    
+    //clients
+    let totalCountClients = [];
+    json.map((el)=>{
+      if (!el.is_employe && !el.is_boss && !el.is_staff) {
+        totalCountClients.push(el)
+      }
+    })
+    setUsers(totalCountClients.length)
+
+    //employes
+    let totalCountEmploye = [];
+    json.map((el)=>{
+      if (el.is_employe) {
+        totalCountEmploye.push(el)
+      }
+    })
+  
+    setEmploye(totalCountEmploye.length)
   }
 
   const infoCompany = async () => {
@@ -27,8 +45,6 @@ function Asside() {
     const fullDataCompany = json[0]
     setCompany(fullDataCompany);
   };
-
-  console.log(company);
 
   useEffect(() => {
     usersCount()
@@ -41,7 +57,7 @@ function Asside() {
     <aside className="main-sidebar sidebar-dark-primary elevation-4">
       <NavLink to="/" className="brand-link">
         <img src={company.image} alt={company.name} className="brand-image img-circle elevation-3" style={{opacity: '.8'}} />
-        <span className="brand-text font-weight-light">{company.name}</span>
+        <span className="brand-text font-weight-bold" >{company.name}</span>
       </NavLink>
       <div className="sidebar">
         <div className="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -64,6 +80,7 @@ function Asside() {
         </div>
         <nav className="mt-2">
           <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            {/* sales */}
             <li className="nav-item">
               <NavLink to="#" className="nav-link">
                 <i className="nav-icon fa fa-money-bill" />
@@ -87,16 +104,33 @@ function Asside() {
                 </li>
               </ul>
             </li>
+            {/* clients */}
             <li className="nav-item">
-              <NavLink to="/clients" className="nav-link">
-                <i className="nav-icon fas fa-users" />
+              <NavLink to="#" className="nav-link">
+                <i className="nav-icon fa fa-users" />
                 <p>
-                  Clientes
-                  <span className="right badge badge-danger">{Users.toString()}</span>
+                  Usuarios
+                  <i className="right fas fa-angle-left" />
                 </p>
               </NavLink>
-            </li>
-            
+              <ul className="nav nav-treeview">
+                <li className="nav-item">
+                  <NavLink to="/clients" className="nav-link">
+                    <i className="far fa-copy nav-icon" />
+                    <p>Clientes</p>
+                    <span className="right badge badge-danger">{Users.toString()}</span>  
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink to="/employes" className="nav-link">
+                    <i className="far fa-copy nav-icon" />
+                    <p>Empleados</p>
+                    <span className="right badge badge-danger">{Employe.toString()}</span>  
+                  </NavLink>
+                </li>
+              </ul>
+            </li>  
+
             <li className="nav-item">
               <NavLink to="/products" className="nav-link">
                 <i className="nav-icon fas fa-box" />
